@@ -6,11 +6,22 @@
   <title>PHP基礎1-2-2</title>
 </head>
 <body>
-  <?php
-  $message = '<p>現在、消費税は10%です。</p><p>鉛筆が100円で税込み110円です。</p><p>消しゴムが200円で税込み220円です。</p>';
-  define('TITLE','<p>現在、消費税は10%です。</p><p>鉛筆が100円で税込み110円です。</p><p>消しゴムが200円で税込み220円です。</p>' )
-  ?>
-  <?= $message; ?>
-  <?= TITLE; ?>
+<?php
+define('TAX_RATE', 10);
+
+$taxRate = 10;
+$penPrice = 100;
+$eraserPrice = 200;
+
+function calculateTaxIncludedPrice($price) {
+    global $TAX_RATE;
+    return $price + ($price * $TAX_RATE / 100);
+}
+$penPriceTaxIncluded = calculateTaxIncludedPrice($penPrice);
+$eraserPriceTaxIncluded = calculateTaxIncludedPrice($eraserPrice);
+
+echo "<p>現在の消費税は {$taxRate} %です。</p><p>鉛筆が {$penPrice} 円で税込 {$penPriceTaxIncluded} 円です。</p>
+<p>消しゴムが {$eraserPrice} 円で税込{$eraserPriceTaxIncluded} 円です。</p>";
+?>
 </body>
 </html>
