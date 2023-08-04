@@ -7,21 +7,17 @@
 </head>
 <body>
 <?php
-define('TAX_RATE', 10);
+define('TAX', 10);
 
-$taxRate = 10;
 $penPrice = 100;
 $eraserPrice = 200;
+$penTax = $penPrice*(TAX+100)/100;
+$eraserPriceTax = $eraserPrice*(TAX+100)/100;
+$pen = '鉛筆';
+$eraser = '消しゴム';
 
-function calculateTaxIncludedPrice($price) {
-    global $TAX_RATE;
-    return $price + ($price * $TAX_RATE / 100);
-}
-$penPriceTaxIncluded = calculateTaxIncludedPrice($penPrice);
-$eraserPriceTaxIncluded = calculateTaxIncludedPrice($eraserPrice);
-
-echo "<p>現在の消費税は {$taxRate} %です。</p><p>鉛筆が {$penPrice} 円で税込 {$penPriceTaxIncluded} 円です。</p>
-<p>消しゴムが {$eraserPrice} 円で税込{$eraserPriceTaxIncluded} 円です。</p>";
+echo "<p>現在の消費税は".TAX."%です。</p><p>{$pen}が{$penPrice}円で税込{$penTax}円です。</p>
+<p>{$eraser}が{$eraserPrice}円で税込{$eraserPriceTax}円です。</p>";
 ?>
 </body>
 </html>
