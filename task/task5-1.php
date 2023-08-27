@@ -10,12 +10,12 @@
 <?php
 echo "<table>";
 for ($i = 1; $i <= 9; $i++) {
-    echo "<tr>";
-    for ($j = 1; $j <= 9; $j++) {
-        $anser = $i * $j;
-        echo "<td>{$i} × {$j} = {$anser}</td>　";
-    }
-    echo "</tr>";
+  echo "<tr>";
+  for ($j = 1; $j <= 9; $j++) {
+      $anser = $i * $j;
+      echo "<td>{$i} × {$j} = {$anser}　</td>";
+  }
+  echo "</tr>";
 }
 echo "</table>";
 ?>
