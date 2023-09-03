@@ -8,7 +8,7 @@
 <body>
   <h1>九九の計算</h1>
 <?php
-echo "<table>";
+echo "<table border=1>";
 for ($i = 1; $i <= 9; $i++) {
   echo "<tr>";
   for ($j = 1; $j <= 9; $j++) {
