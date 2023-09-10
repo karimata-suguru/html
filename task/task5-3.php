@@ -18,17 +18,22 @@
   <table border="1px">
     <tr>
       <?php foreach ($header as $column) : ?>
-        <th><?php echo $column; ?></th>
+        <th>
+          <?php echo $column; ?>
+        </th>
       <?php endforeach; ?>
     </tr>
-
     <?php foreach ($products as $product) : ?>
-      <tr>
-        <?php foreach ($product as $key => $value) : ?>
-          <td><?php echo $value; ?></td>
-        <?php endforeach; ?>
-        <td><?php echo $product['価格'] * (TAX + 100) / 100; ?>円</td>
-      </tr>
+    <tr>
+      <?php foreach ($product as $key => $value) : ?>
+        <td>
+          <?php echo $value; ?>
+        </td>
+      <?php endforeach; ?>
+        <td>
+          <?php echo $product['価格'] * (TAX + 100) / 100; ?>円
+        </td>
+    </tr>
     <?php endforeach; ?>
   </table>
 </body>
